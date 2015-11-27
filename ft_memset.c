@@ -4,10 +4,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	int count;
 
 	count = 0;
-	var = (char *)s;
+	var = (unsigned char *)s;
 	while(s[count] && count < n)
 	{
-		var[count] = c;
+		var[count] = (unsigned char)c;
 		count++;
 	}
 	return (*s);

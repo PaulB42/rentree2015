@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pblondet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 13:25:26 by pblondet          #+#    #+#             */
-/*   Updated: 2015/11/27 16:29:49 by pblondet         ###   ########.fr       */
+/*   Created: 2015/11/27 14:41:16 by pblondet          #+#    #+#             */
+/*   Updated: 2015/11/27 15:05:48 by pblondet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdio.h>
 
-int		ft_isalnum(int c)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char a;
+	unsigned char *c;
+	unsigned char *d;
+	size_t i;
 
-	a = (unsigned char)c;
-	if (a >= 48 && a <= 57)
-		return (1);
-	else if (a >= 65 && a <= 90)
-		return (1);
-	else if (a >= 97 && a <= 122)
-		return(1);
-	return(0);
+	c = (unsigned char *)s1;
+	d = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
+	{
+		if (c[i] != d[i])
+			return ((int)(c[i] - (int)d[i]));
+		i++;
+	}
+	return (0);
+}
+
+int		main(int argc, char **argv)
+{
+	printf("%d", ft_memcmp(argv[1], argv[2], 4));
+	printf("\n%d", memcmp(argv[1], argv[2], 4));
 }

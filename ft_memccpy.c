@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pblondet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 13:13:43 by pblondet          #+#    #+#             */
-/*   Updated: 2015/11/27 16:31:04 by pblondet         ###   ########.fr       */
+/*   Created: 2015/11/27 11:38:49 by pblondet          #+#    #+#             */
+/*   Updated: 2015/11/27 15:09:43 by pblondet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(int c)
+#include <string.h>
+#include <stdio.h>
+
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	if (c >= 48 && c <= 57)
-		return(1);
-	return(0);
+	unsigned char *d;
+	unsigned char *s;
+	size_t i;
+
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	while (i < n && s[i] != c)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	if (d[i] == c)
+	{
+		i++;
+		return (&d[i]);
+	}
+	return (NULL);
+}
+
+int		main(int argc, char **argv)
+{
+	
 }

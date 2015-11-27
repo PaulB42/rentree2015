@@ -6,11 +6,11 @@
 /*   By: pblondet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 13:34:23 by pblondet          #+#    #+#             */
-/*   Updated: 2015/11/25 13:40:00 by pblondet         ###   ########.fr       */
+/*   Updated: 2015/11/27 16:30:27 by pblondet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		isalpha(int c)
+int		ft_isalpha(int c)
 {
 	unsigned char a;
 
